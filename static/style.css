@@ -1,0 +1,82 @@
+:root {
+    color-scheme: light;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f4f0e8;
+    color: #202a2e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #f4f0e8, #dbe9e5);
+}
+
+.container {
+    width: min(680px, 92vw);
+    padding: 3rem;
+    background: #fffdf8;
+    border: 1px solid #c7d5d1;
+    box-shadow: 12px 12px 0 #b7ccc5;
+}
+
+h1 {
+    margin-top: 0;
+    color: #174c4f;
+    font-size: 2.5rem;
+}
+
+label,
+textarea,
+button {
+    display: block;
+    width: 100%;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+textarea {
+    resize: vertical;
+    padding: 0.8rem;
+    border: 1px solid #8ca6a0;
+    font: inherit;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border: 0;
+    background: #d76542;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #b94f31;
+}
+
+.result {
+    margin-top: 2rem;
+    line-height: 1.4;
+}
+
+.result h2 {
+    color: #174c4f;
+}
+
+.dominant {
+    padding-top: 0.75rem;
+    border-top: 1px solid #c7d5d1;
+    font-weight: bold;
+    color: #b94f31;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <h1>Emotion Detection</h1>
+        <form id="emotion-form">
+            <label for="text-to-analyze">Enter a sentence</label>
+            <textarea id="text-to-analyze" name="textToAnalyze" rows="5"
+                      placeholder="Type a sentence here..."></textarea>
+            <button type="submit">Analyze emotion</button>
+        </form>
+        <section id="result" class="result" aria-live="polite"></section>
+    </main>
+
+    <script>
+        const form = document.getElementById("emotion-form");
+        const textInput = document.getElementById("text-to-analyze");
+        const result = document.getElementById("result");
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            result.textContent = "Analyzing...";
+
+            const query = encodeURIComponent(textInput.value);
+            try {
+                const response = await fetch(`/emotionDetector?textToAnalyze=${query}`);
+                result.textContent = await response.text();
+            } catch (error) {
+                result.textContent = "Unable to connect to the emotion service.";
+            }
+        });
+    </script>
+</body>
+</html>
