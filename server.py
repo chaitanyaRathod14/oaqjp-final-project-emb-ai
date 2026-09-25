@@ -18,9 +18,12 @@ def index():
 def detect_emotion():
     """Analyze the text supplied by the browser."""
     text_to_analyze = request.args.get("textToAnalyze", "")
+    if not text_to_analyze.strip():
+        return "Invalid input! Try again!", 400
+
     result = emotion_detector(text_to_analyze)
     if result["dominant_emotion"] is None:
-        return "Invalid input! Try again!", 400
+        return "Emotion service unavailable. Try again later.", 502
 
     return (
         "For the given statement, the system response is: "
