@@ -1,6 +1,6 @@
 # EmotionDetection
 
-EmotionDetection is a simple Flask web application for identifying the dominant emotion in a sentence with the IBM Watson NLP Emotion Lite API.
+EmotionDetection is a Flask web application that identifies emotions in a sentence using the IBM Watson NLP Emotion Lite API.
 
 ## Technologies
 
@@ -11,8 +11,6 @@ EmotionDetection is a simple Flask web application for identifying the dominant 
 - unittest
 
 ## Installation
-
-From the project directory, create and activate a virtual environment, then install the dependencies:
 
 ```powershell
 py -m venv .venv
@@ -27,6 +25,19 @@ py server.py
 ```
 
 Open <http://127.0.0.1:5000> in a browser.
+
+If the Watson service is unavailable, enable the clearly labeled offline demo mode for local interface screenshots:
+
+```powershell
+$env:EMOTION_DEMO_MODE = "1"
+py server.py
+```
+
+The normal Watson behavior is restored by closing the terminal or running:
+
+```powershell
+Remove-Item Env:EMOTION_DEMO_MODE
+```
 
 ## Run the tests
 
@@ -51,39 +62,6 @@ EmotionDetection/
 │   └── index.html
 ├── static/
 │   └── style.css
-=======
-
-# Emotion Detector
-
-## Project Overview
-
-This project is an Emotion Detector application developed using Python and Flask.
-
-The application analyzes a given text and detects the emotions expressed in the text using the Watson NLP Emotion Detection service.
-
-The detected emotions are:
-
-- Anger
-- Disgust
-- Fear
-- Joy
-- Sadness
-
-The application also identifies the **dominant emotion** based on the highest emotion score.
-
-## Project Structure
-
-```text
-Emotion-Detector/
-│
-├── EmotionDetection/
-│   ├── __init__.py
-│   └── emotion_detection.py
-│
-├── templates/
-│   └── index.html
-│
->>>>>>> origin/main
 ├── server.py
 ├── test_emotion_detection.py
 ├── requirements.txt
