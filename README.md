@@ -1,3 +1,9 @@
+# Final Project
+
+## Emotion Detection
+
+This project is an Emotion Detection application using Watson NLP.
+
 # EmotionDetection
 
 EmotionDetection is a Flask web application that identifies emotions in a sentence using the IBM Watson NLP Emotion Lite API.
